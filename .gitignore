@@ -52,3 +52,9 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
+#vi 
+*.swp
+
+#super secret stuff
+keys.py
+books.xml
