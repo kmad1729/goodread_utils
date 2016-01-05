@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import requests
 import xml.etree.ElementTree as ET
 from requests_oauthlib import OAuth1Session, OAuth1
@@ -34,7 +36,7 @@ s1 = r.get('oauth_token_secret')
 
 user_authentication_url = (oauth1_request_phase.authorization_url(auth_url))
 
-auth_resp = raw_input("paste the following link in your browser: \n\n %s \n\n "
+auth_resp = input("paste the following link in your browser: \n\n %s \n\n "\
                 "and paste the response: " % user_authentication_url)
 
 oauth_resp = oauth1_request_phase.parse_authorization_response(auth_resp)
@@ -97,7 +99,7 @@ def get_books_from_user_shelf(session_object, userId, shelf_name = "read",
     data = ET.fromstring(resp.content)
 
     with open('books.xml','w') as f:
-        f.write(resp.content)
+        f.write(resp.content.decode())
 
     return [Book(b) for b in data.findall('reviews/review/book')]
     

@@ -1,4 +1,5 @@
-goodread_utils
-==============
+goodread utils
+--------------
 
-Bunch of functions to extract information from goodreads using their rest api
+Python helper script to interact with [goodreads](https://www.goodreads.com/api).
+
